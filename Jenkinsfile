@@ -20,11 +20,8 @@ pipeline {
     stages {
         stage('Build'){
             steps {
-                sh '''
-                    echo "JAVA_HOME=$JAVA_HOME"
-                    java -version
-                    mvn -B -s settings.xml -DskipTests clean install
-                '''
+                 sh 'mvn -B -s settings.xml -DskipTests clean install'
+                
             }
         }
     }
